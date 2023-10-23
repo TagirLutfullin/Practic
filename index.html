@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    // Задание 1: Проверка логина и пароля
+let login = prompt("Введите логин:");
+
+if (login === "Админ") {
+  let password = prompt("Введите пароль:");
+
+  if (password === "Я главный") {
+    alert("Здравствуйте!");
+  } else if (password === null) {
+    alert("Отменено");
+  } else {
+    alert("Неверный пароль");
+  }
+} else if (login === null) {
+  alert("Отменено");
+} else {
+  alert("Я вас не знаю");
+}
+
+// Задание 2: Ввод имени и года рождения, вычисление возраста
+let username = prompt("Введите ваше имя:");
+let birthYear = prompt("Введите год вашего рождения:");
+
+if (username !== null && birthYear !== null) {
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - parseInt(birthYear);
+  document.write(username + ": " + age + "<br>");
+}
+
+// Задание 3: Ввод номера месяца и определение сезона года
+let monthNumber = prompt("Введите номер месяца, в котором вы родились:");
+
+if (monthNumber !== null) {
+  // Проверка на валидный номер месяца (от 1 до 12)
+  if (monthNumber >= 1 && monthNumber <= 12) {
+    const months = ["Зима", "Весна", "Лето", "Осень"];
+    const season = months[Math.floor((monthNumber % 12) / 3)];
+    document.write("Вы родились в сезоне: " + season);
+  } else {
+    document.write("Неверный номер месяца");
+  }
+}
+
+    </script>
+</body>
+</html>
+
+
